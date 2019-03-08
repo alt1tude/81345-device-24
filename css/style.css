@@ -1,22 +1,25 @@
 @font-face {
   font-family: "Gilroy ExtraBold";
-  src: url("fonts/gilroyextrabold.woff2") format("woff2"),
+  src: url("../fonts/gilroyextrabold.woff") format("woff"),
+       url("../fonts/gilroyextrabold.woff2") format("woff2"),
        local("Gilroy-ExtraBold");
   font-style: normal;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 @font-face {
   font-family: "Gilroy Light";
-  src: url("fonts/gilroylight.woff2") format("woff2"),
+  src: url("../fonts/gilroylight.woff") format("woff"),
+       url("../fonts/gilroylight.woff2") format("woff2"),
        local("Gilroy-Light");
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 @font-face {
   font-family: "Open Sans";
-  src: url("fonts/opensans.woff2") format("woff2"),
+  src: url("../fonts/opensans.woff") format("woff"),
+       url("../fonts/opensans.woff2") format("woff2"),
        local("OpenSans");
   font-style: normal;
   font-weight: 400;
@@ -24,7 +27,8 @@
 
 @font-face {
   font-family: "Open Sans Light";
-  src: url("fonts/opensanslight.woff2") format("woff2"),
+  src: url("../fonts/opensanslight.woff") format("woff"),
+       url("../fonts/opensanslight.woff2") format("woff2"),
        local("OpenSans-Light");
   font-style: normal;
   font-weight: 300;
@@ -46,7 +50,6 @@ html {
 }
 
 body {
-  min-width: 1440px;
   margin: 0;
   padding: 0;
   font-family: "Open Sans Light", Arial, sans-serif;
@@ -57,13 +60,13 @@ body {
   font-style: normal;
   font-weight: 300;
   color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);   
+  background-color: rgb(255, 255, 255);
 }
 
-header {
+.main-header {
   width: 1160px;
   margin: 0 auto;
-  margin-top: 20px;  
+  margin-top: 20px;
   padding-left: 60px;
   padding-right: 60px;
   padding-bottom: 160px;
@@ -312,7 +315,9 @@ input[type="radio"].visually-hidden {
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;      
+        -ms-flex-wrap: wrap; 
+          flex-wrap: wrap;
+          align-items: center;              
 }
 
 .header-top .user-navigation li:first-child {
@@ -450,12 +455,9 @@ input[type="radio"].visually-hidden {
 
 .menu-list {  
   width: 1040px;
-  height: 160px;
- 
-  display: -webkit-box;
- 
-  display: -ms-flexbox;
- 
+  height: 160px; 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -778,7 +780,7 @@ input[type="radio"].visually-hidden {
 .popular-wrap { 
   width: 160px;           
   background-color: rgb(247, 226, 150);  
-  margin-bottom: 20px;
+  margin-bottom: 26px;
   -webkit-transition: all 0.1s linear;
   -o-transition: all 0.1s linear;
   transition: all 0.1s linear;  
@@ -1330,7 +1332,7 @@ input[type="radio"].visually-hidden {
 }
 
 /*-----Отсюда пошел футер-----*/
-footer {
+.main-footer {
   background-color: rgb(70, 70, 70);   
 }
 
@@ -1356,31 +1358,29 @@ footer {
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;       
+        -ms-flex-wrap: wrap; 
+            flex-wrap: wrap;
+            align-items: center;      
 }
 
 .footer-top {
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
-.footer-top .user-navigation li {
-  margin-right: 42px;  
+.footer-top .user-navigation {
+  width: 28%;
+}
+.inner-page .footer-top .user-navigation {
+  width: 40%;
 }
 
-.footer-top .user-navigation li:last-child {
-  margin-right: 0; 
-}
 
 .footer-middle {
   margin-bottom: 46px;
 }
 
-.footer-middle .site-navigation li {  
-  margin-right: 35px;    
-}
-
-.footer-middle .site-navigation li:last-child {
-  margin-right: 0; 
+.footer-middle .site-navigation {
+  width: 40%;
 }
 
 .footer-logo {
@@ -1648,7 +1648,7 @@ footer .decoration-line {
 .feedback textarea {
   color: rgb(0, 0, 0);
 
-  font-family: "Open Sans";
+  font-family: "Open Sans", Arial, sans-serif;;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -2120,38 +2120,38 @@ footer .decoration-line {
   margin-bottom: 20px;        
 }
 
-.filter-scrollbar {
-  position: relative;
+.filter-scrollbar {  
   top: 2px;
 }
 
-.filter-scrollbar::after {
+.filter-scrollbar legend {
+  position: relative;  
+  margin: 0;
+  padding: 0;
+  padding-top: 8px;
+  padding-bottom: 35px;  
+}
+
+.filter-scrollbar legend::after {
   position: absolute;
 
   content: "";
   top: 0;
   left: 0;
-  width: 100%;
+  width: 200px;
   height: 2px;
   background-color: rgb(0, 0, 0);
 }
 
-.filter-scrollbar::before {
+.filter-scrollbar legend::before {
   position: absolute;
 
   content: "";
-  bottom: 0;
+  bottom: -76px;
   left: 0;
-  width: 100%;
+  width: 200px;
   height: 2px;
   background-color: rgb(0, 0, 0);
-} 
-
-.filter-scrollbar legend {  
-  margin: 0;
-  padding: 0;
-  padding-top: 8px;
-  padding-bottom: 35px;  
 }
 
 .range-controls .scale {
@@ -2182,6 +2182,11 @@ footer .decoration-line {
           box-shadow: 0 2px 1px 0 rgba(207, 207, 207);
   background-color: rgb(171, 171, 171);
   cursor: pointer;    
+}
+
+.range-controls .toggle:active {
+  width: 24px;
+  height: 24px;
 }
 
 .range-controls .toggle-min {
@@ -2484,6 +2489,7 @@ footer .decoration-line {
   width: 11px;
   height: 10px;
   display: inline-block;
+  vertical-align: middle;
   text-indent: 900px;
   overflow: hidden;
 }
@@ -2574,6 +2580,8 @@ footer .decoration-line {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: none;
   z-index: 1;
 }
@@ -2617,10 +2625,9 @@ footer .decoration-line {
 .add-cart {
   position: relative;
   z-index: 0;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  padding: 8px 23px;  
+  width: 100%;
+  padding: 8px 0;
+  text-align: center;
 }
 
 .add-cart::before {
